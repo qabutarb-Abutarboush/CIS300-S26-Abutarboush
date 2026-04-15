@@ -1,3 +1,4 @@
+/* /pacific.css */
 * {
     box-sizing: border-box;
 }
@@ -33,7 +34,6 @@ header {
     text-align: center;
     min-height: 140px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,13 +52,19 @@ header {
     border-radius: 18px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    padding: 6px;
 }
 
 .top-media img {
-    width: 100%;
-    max-height: 180px;
-    object-fit: cover;
     display: block;
+    max-width: 100%;
+    max-height: 168px;
+    width: auto;
+    height: auto;
 }
 
 nav {
@@ -108,17 +114,21 @@ main h2 {
 }
 
 main h3 {
-    text-align: center;
+    color: #4a3320;
+    font-size: 1.25em;
+    text-align: left;
     margin-top: 30px;
     margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b08a3f;
 }
 
 main p {
     line-height: 1.8;
     font-size: 1.05em;
-    margin: 0 auto 18px auto;
-    max-width: 700px;
-    text-align: center;
+    margin: 0 0 18px 0;
+    max-width: none;
+    text-align: left;
 }
 
 main ul {
@@ -156,6 +166,7 @@ aside {
     flex: 1;
     min-height: 380px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    overflow: hidden;
 }
 
 .side-media img {
@@ -164,6 +175,38 @@ aside {
     object-fit: cover;
     border-radius: 18px;
     display: block;
+}
+
+/* figures page only */
+.figures-layout {
+    align-items: stretch;
+}
+
+.figures-aside {
+    height: 100%;
+    justify-content: space-between;
+}
+
+.figures-aside .side-media {
+    flex: 0 0 calc((100% - 80px) / 5);
+    min-height: 0;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+    #content-area {
+        grid-template-columns: 1fr;
+    }
+
+    .figures-aside {
+        height: auto;
+        justify-content: flex-start;
+    }
+
+    .figures-aside .side-media {
+        flex: none;
+        min-height: 180px;
+    }
 }
 
 footer {
@@ -176,4 +219,4 @@ footer {
 
 footer p {
     margin: 0;
-} 
+}
