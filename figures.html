@@ -1,9 +1,10 @@
-<!-- /figures.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Major figures of the Investiture Conflict, including Pope Gregory VII, Henry IV, Matilda of Tuscany, the Archbishop of Mainz, and Wibert of Ravenna.">
+    <meta name="keywords" content="Pope Gregory VII, Henry IV, Matilda of Tuscany, Archbishop of Mainz, Wibert of Ravenna, Investiture Conflict">
     <title>Major Figures</title>
     <link rel="stylesheet" href="pacific.css">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
@@ -17,7 +18,9 @@
         <div class="header-text">
             <h1>Throne and Altar: Major Figures</h1>
         </div>
-        <div class="top-media"></div>
+        <div class="top-media">
+            <img src="hre_map.png" alt="Investiture Conflict scene">
+        </div>
     </header>
 
     <nav>
@@ -28,57 +31,23 @@
         <a href="legacy.html">Legacy &amp; Impact</a>
     </nav>
 
-    <div id="content-area" class="figures-layout">
-        <main>
+    <div id="content-area">
+        <main class="figure-card">
             <h2>Major Figures</h2>
-
-            <h3>Pope Gregory VII</h3>
-            <p>
-                Pope Gregory VII was one of the most important leaders in the Investiture Conflict. He believed that only
-                the Church had the authority to appoint bishops and other church officials. His reforms challenged the
-                traditional power of kings and emperors, especially Henry IV, and helped turn the dispute into a major
-                struggle over authority in medieval Europe.
+            <h3 id="figure-name">Pope Gregory VII</h3>
+            <p id="figure-text">
+                Pope Gregory VII was one of the most important leaders in the Investiture Conflict. He believed that only the Church had the authority to appoint bishops and other church officials. His reforms challenged the traditional power of kings and emperors, especially Henry IV, and helped turn the dispute into a major struggle over authority in medieval Europe.
             </p>
 
-            <h3>Henry IV</h3>
-            <p>
-                Henry IV, Holy Roman Emperor, defended the traditional right of rulers to appoint bishops within their
-                territories. He believed church appointments were an important part of royal authority and political
-                control. His conflict with Gregory VII led to excommunication, rebellion among German nobles, and the
-                famous journey to Canossa.
-            </p>
-
-            <h3>Matilda of Tuscany</h3>
-            <p>
-                Matilda of Tuscany was one of Pope Gregory VII’s strongest allies. As a powerful ruler in northern and
-                central Italy, she supported the papacy with military strength, political protection, and territory that
-                served as a safe base for papal supporters. Her backing gave Gregory VII crucial support during the conflict.
-            </p>
-
-            <h3>Wibert of Ravenna</h3>
-            <p>
-                Wibert of Ravenna was an important supporter of Henry IV during the Investiture Conflict. He opposed
-                Gregory VII and became a central figure on the imperial side of the struggle. Later, he was made antipope
-                Clement III, which deepened the conflict and showed how divided the Church and empire had become.
-            </p>
-
-            <h3>Archbishop of Mainz</h3>
-            <p>
-                The Archbishop of Mainz represented the importance of powerful church leaders within the Holy Roman Empire.
-                As one of the most influential bishoprics in Germany, Mainz played a major role in both politics and religion.
-                Leaders in positions like this were deeply involved in the struggle because bishops were not only spiritual
-                officials, but also major political figures.
-            </p>
+            <div class="figure-controls">
+                <button id="next-btn" type="button">Next</button>
+            </div>
         </main>
 
-        <aside class="figures-aside">
-            <div class="side-media"></div>
-            <div class="side-media"></div>
+        <aside class="figure-image-panel">
             <div class="side-media">
-                <img src="Matilda_of_Tuscany.png" alt="Matilda of Tuscany">
+                <img id="figure-image" src="gregory.png" alt="Pope Gregory VII">
             </div>
-            <div class="side-media"></div>
-            <div class="side-media"></div>
         </aside>
     </div>
 
@@ -87,6 +56,60 @@
     </footer>
 
 </div>
+
+<script>
+    const figures = [
+        {
+            name: "Pope Gregory VII",
+            text: "Pope Gregory VII was one of the most important leaders in the Investiture Conflict. He believed that only the Church had the authority to appoint bishops and other church officials. His reforms challenged the traditional power of kings and emperors, especially Henry IV, and helped turn the dispute into a major struggle over authority in medieval Europe.",
+            image: "gregory.png",
+            alt: "Pope Gregory VII"
+        },
+        {
+            name: "Henry IV",
+            text: "Henry IV, Holy Roman Emperor, defended the traditional right of rulers to appoint bishops within their territories. He believed church appointments were an important part of royal authority and political control. His conflict with Gregory VII led to excommunication, rebellion among German nobles, and the famous journey to Canossa.",
+            image: "heinrich.png",
+            alt: "Henry IV"
+        },
+        {
+            name: "Matilda of Tuscany",
+            text: "Matilda of Tuscany was one of Pope Gregory VII's strongest allies. As a powerful ruler in northern and central Italy, she supported the papacy with military strength, political protection, and territory that served as a safe base for papal supporters. Her backing gave Gregory VII crucial support during the conflict.",
+            image: "Matilda_of_Tuscany.png",
+            alt: "Matilda of Tuscany"
+        },
+        {
+            name: "Archbishop of Mainz",
+            text: "The Archbishop of Mainz was important in the Investiture Conflict because the archbishop held both religious authority and political influence in the Holy Roman Empire. Mainz was one of the most powerful bishoprics in Germany, so its leader stood at the center of the struggle between papal reform and imperial control. This made the archbishop a key figure in showing how church offices could also be major positions of secular power.",
+            image: "Archbishop_of_Mainz.png",
+            alt: "Archbishop of Mainz"
+        },
+        {
+            name: "Wibert of Ravenna",
+            text: "Wibert of Ravenna, later known as Antipope Clement III, became a major symbol of imperial-backed church power during the Investiture Conflict. Supported by Henry IV, he challenged Gregory VII and showed how emperors could use rival church leaders to weaken papal authority. His role makes the conflict feel less like a simple argument between two men and more like a wider struggle over who had the right to control the Church.",
+            image: "Wibert_of_Ravenna.png",
+            alt: "Wibert of Ravenna"
+        }
+    ];
+
+    let currentFigureIndex = 0;
+
+    const figureName = document.getElementById("figure-name");
+    const figureText = document.getElementById("figure-text");
+    const figureImage = document.getElementById("figure-image");
+    const nextButton = document.getElementById("next-btn");
+
+    function showFigure(index) {
+        figureName.textContent = figures[index].name;
+        figureText.textContent = figures[index].text;
+        figureImage.src = figures[index].image;
+        figureImage.alt = figures[index].alt;
+    }
+
+    nextButton.addEventListener("click", function () {
+        currentFigureIndex = (currentFigureIndex + 1) % figures.length;
+        showFigure(currentFigureIndex);
+    });
+</script>
 
 </body>
 </html>

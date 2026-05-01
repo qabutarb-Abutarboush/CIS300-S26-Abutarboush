@@ -60,11 +60,12 @@ header {
 }
 
 .top-media img {
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    max-width: 100%;
-    max-height: 168px;
-    width: auto;
-    height: auto;
+    border-radius: 12px;
 }
 
 nav {
@@ -153,6 +154,24 @@ main ul {
     margin: 0 auto 10px auto;
 }
 
+.video-box {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.video-box video {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #9b7e4d;
+    border-radius: 12px;
+    background: #2b2118;
+}
+
+.video-box p {
+    text-align: center;
+}
+
 aside {
     display: flex;
     flex-direction: column;
@@ -167,17 +186,273 @@ aside {
     min-height: 380px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .side-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     border-radius: 18px;
     display: block;
 }
 
-/* figures page only */
+/* figures page */
+.figure-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.figure-card h3 {
+    text-align: center;
+}
+
+.figure-card p {
+    text-align: center;
+}
+
+.figure-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.figure-controls button {
+    padding: 12px 22px;
+    font-family: 'Uncial Antiqua', Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    background: #b08a3f;
+    color: #fff8e8;
+    border: 1px solid #8b6a2f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.figure-controls button:hover {
+    background: #9b7e4d;
+}
+
+.figure-image-panel .side-media {
+    min-height: 640px;
+}
+
+/* timeline page */
+.timeline-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline-card h3 {
+    text-align: center;
+}
+
+.timeline-card p {
+    text-align: center;
+}
+
+.timeline-date {
+    text-align: center;
+    font-size: 1.1em;
+    color: #6b4a24;
+    margin-bottom: 15px;
+}
+
+.timeline-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timeline-controls button {
+    padding: 12px 22px;
+    font-family: 'Uncial Antiqua', Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    background: #b08a3f;
+    color: #fff8e8;
+    border: 1px solid #8b6a2f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.timeline-controls button:hover {
+    background: #9b7e4d;
+}
+
+.timeline-image-panel .side-media {
+    min-height: 640px;
+}
+
+/* table */
+.conflict-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px auto;
+    background: #fff8e8;
+    border: 1px solid #9b7e4d;
+}
+
+.conflict-table th {
+    background: #b08a3f;
+    color: #fff8e8;
+    padding: 12px;
+    border: 1px solid #8b6a2f;
+    text-align: center;
+}
+
+.conflict-table td {
+    padding: 12px;
+    border: 1px solid #b08a3f;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* legacy page */
+.legacy-section {
+    margin-bottom: 28px;
+}
+
+.legacy-section h3 {
+    text-align: center;
+}
+
+.legacy-section p {
+    text-align: center;
+}
+
+.quiz-box {
+    background: #fff8e8;
+    border: 1px solid #b08a3f;
+    border-radius: 18px;
+    padding: 22px;
+    margin-top: 35px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+.quiz-box h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.quiz-question {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.quiz-question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.quiz-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.quiz-button button {
+    padding: 12px 22px;
+    font-family: 'Uncial Antiqua', Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    background: #b08a3f;
+    color: #fff8e8;
+    border: 1px solid #8b6a2f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.quiz-button button:hover {
+    background: #9b7e4d;
+}
+
+#quiz-result {
+    text-align: center;
+    margin-top: 18px;
+    font-weight: bold;
+    color: #4a3320;
+}
+
+.legacy-image-panel .side-media {
+    min-height: 305px;
+}
+
+/* form */
+.feedback-box {
+    background: #fff8e8;
+    border: 1px solid #b08a3f;
+    border-radius: 18px;
+    padding: 22px;
+    margin-top: 35px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+.feedback-box h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.feedback-box p {
+    text-align: center;
+}
+
+form {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #4a3320;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    border: 1px solid #9b7e4d;
+    border-radius: 8px;
+    background: #f3ead7;
+    color: #2b2118;
+}
+
+form input[type="range"] {
+    padding: 0;
+}
+
+.form-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-button input {
+    width: auto;
+    padding: 12px 22px;
+    font-family: 'Uncial Antiqua', Georgia, "Times New Roman", serif;
+    background: #b08a3f;
+    color: #fff8e8;
+    border: 1px solid #8b6a2f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.form-button input:hover {
+    background: #9b7e4d;
+}
+
+/* old figures layout kept just in case */
 .figures-layout {
     align-items: stretch;
 }
@@ -194,6 +469,10 @@ aside {
 
 /* mobile */
 @media (max-width: 900px) {
+    header {
+        grid-template-columns: 1fr;
+    }
+
     #content-area {
         grid-template-columns: 1fr;
     }
@@ -206,6 +485,19 @@ aside {
     .figures-aside .side-media {
         flex: none;
         min-height: 180px;
+    }
+
+    .figure-image-panel .side-media,
+    .timeline-image-panel .side-media {
+        min-height: 380px;
+    }
+
+    .legacy-image-panel .side-media {
+        min-height: 260px;
+    }
+
+    main h2 {
+        width: 90%;
     }
 }
 
