@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK3KBS7J4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FK3KBS7J4K');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Background information about the Investiture Conflict and the struggle between medieval rulers and the Church.">
-    <meta name="keywords" content="Investiture Conflict, lay investiture, medieval Europe, Holy Roman Empire, Church authority">
-    <title>Background</title>
+    <meta name="description" content="A timeline of major events in the Investiture Conflict from the 1059 Papal Election Reform to the Concordat of Worms in 1122.">
+    <meta name="keywords" content="Investiture Conflict timeline, Papal Election Reform, Dictatus Papae, Canossa, Concordat of Worms">
+    <title>Timeline</title>
     <link rel="stylesheet" href="pacific.css">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
 </head>
@@ -16,10 +26,10 @@
 
     <header>
         <div class="header-text">
-            <h1>Throne and Altar: Background</h1>
+            <h1>Throne and Altar: Timeline</h1>
         </div>
         <div class="top-media">
-            <img src="hre_map.png" alt="Background page image">
+            <img src="hre_map.png" alt="Map of the Holy Roman Empire">
         </div>
     </header>
 
@@ -32,35 +42,50 @@
     </nav>
 
     <div id="content-area">
-        <main>
-            <h2>Background</h2>
-            <p><em>
-            To understand the Investiture Conflict, it is important to first understand how power worked in medieval Europe.
-            </em></p>
+        <main class="timeline-card">
+            <h2>Timeline</h2>
 
-            <p>
-            Before the Investiture Conflict began, power in medieval Europe was not clearly divided between the Church and political rulers. The Holy Roman Empire was made up of many regions controlled by nobles, bishops, and local leaders, all of whom held different kinds of authority. Bishops were not just religious figures, they also controlled land, collected taxes, and influenced political decisions. Because of this, both the emperor and the pope wanted control over who was appointed to these positions.
+            <div class="timeline-date" id="timeline-date">1059</div>
+
+            <h3 id="timeline-title">Papal Election Reform</h3>
+
+            <p id="timeline-text">
+                In 1059, Pope Nicholas II changed the way popes were chosen by giving the College of Cardinals a stronger role in papal elections. This weakened the influence of emperors and Roman nobles over the papacy. It helped set the stage for the Investiture Conflict because the Church was becoming more independent from secular rulers.
             </p>
 
-            <p>
-            At the time, emperors like Henry IV believed it was their right to appoint bishops within their territories. This practice, known as lay investiture, allowed rulers to maintain control over important regions by placing loyal individuals in powerful church roles. However, the Church began to challenge this system. Reformers, especially under Pope Gregory VII, argued that only the Church had the authority to appoint its own officials. They believed that allowing kings to choose bishops corrupted the spiritual role of the Church and mixed religious authority with political interests.
-            </p>
+            <div class="timeline-controls">
+                <button id="next-btn" type="button">Next</button>
+            </div>
 
-            <p>
-            This tension was not limited to just the pope and the emperor. Other regions and leaders played a major role in shaping the conflict. In northern Italy, Matilda of Tuscany strongly supported the pope and provided both military and political backing. In Germany, powerful bishoprics like the Archbishopric of Mainz were deeply involved, since their leaders held influence in both religious and imperial matters. At the same time, regions such as Saxony resisted Henry IV’s authority, adding even more instability to the empire.
-            </p>
+            <h3>Conflict Summary Table</h3>
 
-            <p>
-            By the time the conflict fully emerged in the late 11th century, it had become clear that this was more than a disagreement between two individuals. It was a broader struggle over who held ultimate authority in medieval society. The question of whether power came from the Church or from political rulers set the stage for one of the most important conflicts in European history.
-            </p>
+            <table class="conflict-table">
+                <tr>
+                    <th>Year</th>
+                    <th>Event</th>
+                    <th>Why It Mattered</th>
+                </tr>
+                <tr>
+                    <td>1076</td>
+                    <td>Henry IV was excommunicated</td>
+                    <td>It weakened Henry's authority and encouraged German nobles to challenge him.</td>
+                </tr>
+                <tr>
+                    <td>1077</td>
+                    <td>The Walk to Canossa</td>
+                    <td>It showed the power of the papacy over even an emperor.</td>
+                </tr>
+                <tr>
+                    <td>1122</td>
+                    <td>Concordat of Worms</td>
+                    <td>It created a compromise between Church authority and imperial authority.</td>
+                </tr>
+            </table>
         </main>
 
-        <aside>
+        <aside class="timeline-image-panel">
             <div class="side-media">
-                <img src="lay investiture controversy.png" alt="Medieval illuminated manuscript showing the lay investiture controversy in Heinrich IV's court">
-            </div>
-            <div class="side-media">
-                <img src="Matilda_Gregory.png" alt="Matilda of Tuscany and Pope Gregory VII">
+                <img id="timeline-image" src="papalreform.png" alt="Papal Election Reform">
             </div>
         </aside>
     </div>
@@ -70,6 +95,88 @@
     </footer>
 
 </div>
+
+<script>
+    const timelineEvents = [
+        {
+            date: "1059",
+            title: "Papal Election Reform",
+            text: "In 1059, Pope Nicholas II changed the way popes were chosen by giving the College of Cardinals a stronger role in papal elections. This weakened the influence of emperors and Roman nobles over the papacy. It helped set the stage for the Investiture Conflict because the Church was becoming more independent from secular rulers.",
+            image: "papalreform.png",
+            alt: "Papal Election Reform"
+        },
+        {
+            date: "1073",
+            title: "Gregory VII Becomes Pope",
+            text: "In 1073, Gregory VII became pope and pushed the reform movement much harder. He believed the Church had to be free from control by kings and emperors. His leadership turned older arguments about church reform into a direct confrontation with Henry IV.",
+            image: "gregory.png",
+            alt: "Pope Gregory VII"
+        },
+        {
+            date: "1075",
+            title: "The Dictatus Papae",
+            text: "Around 1075, Gregory VII issued the Dictatus Papae, a collection of statements about papal authority. It claimed that the pope held supreme power in the Church and could even challenge emperors. This made the conflict about more than bishops. It became a fight over who held the highest authority in Christian Europe.",
+            image: "gregory.png",
+            alt: "Pope Gregory VII"
+        },
+        {
+            date: "1076",
+            title: "Henry IV Defies Gregory VII",
+            text: "In 1076, Henry IV rejected Gregory VII's authority and supported bishops against the pope. Gregory responded by excommunicating Henry, cutting him off from the Church. This was dangerous for Henry because many German nobles used the excommunication as a reason to rebel against him.",
+            image: "heinrich.png",
+            alt: "Henry IV"
+        },
+        {
+            date: "1077",
+            title: "The Walk to Canossa",
+            text: "In 1077, Henry IV traveled to Canossa in northern Italy to seek forgiveness from Gregory VII. He waited outside in winter conditions before the pope lifted his excommunication. Canossa became one of the most famous moments of the conflict because it showed the spiritual power of the papacy over an emperor.",
+            image: "Matilda_of_Tuscany.png",
+            alt: "Matilda of Tuscany"
+        },
+        {
+            date: "1080",
+            title: "The Conflict Breaks Open Again",
+            text: "The peace after Canossa did not last. In 1080, Gregory VII excommunicated Henry IV again, while Henry supported Wibert of Ravenna as a rival pope. This showed that the conflict had become a wider political and religious struggle, not just a personal argument between Gregory and Henry.",
+            image: "Wibert_of_Ravenna.png",
+            alt: "Wibert of Ravenna"
+        },
+        {
+            date: "1084",
+            title: "Henry IV Enters Rome",
+            text: "In 1084, Henry IV entered Rome and was crowned emperor by Wibert of Ravenna, who took the name Clement III. Gregory VII was forced to flee the city with help from his allies. This moment showed how far imperial power could still reach, even while the papacy was claiming greater independence.",
+            image: "Wibert_of_Ravenna.png",
+            alt: "Wibert of Ravenna"
+        },
+        {
+            date: "1122",
+            title: "The Concordat of Worms",
+            text: "In 1122, the Concordat of Worms finally settled the Investiture Conflict. The agreement separated spiritual authority from imperial authority. The Church gained control over the religious side of appointing bishops, while the emperor kept some political influence. It did not end church-state conflict forever, but it changed the balance of power in medieval Europe.",
+            image: "hre_map.png",
+            alt: "Map of the Holy Roman Empire"
+        }
+    ];
+
+    let currentTimelineIndex = 0;
+
+    const timelineDate = document.getElementById("timeline-date");
+    const timelineTitle = document.getElementById("timeline-title");
+    const timelineText = document.getElementById("timeline-text");
+    const timelineImage = document.getElementById("timeline-image");
+    const nextButton = document.getElementById("next-btn");
+
+    function showTimelineEvent(index) {
+        timelineDate.textContent = timelineEvents[index].date;
+        timelineTitle.textContent = timelineEvents[index].title;
+        timelineText.textContent = timelineEvents[index].text;
+        timelineImage.src = timelineEvents[index].image;
+        timelineImage.alt = timelineEvents[index].alt;
+    }
+
+    nextButton.addEventListener("click", function () {
+        currentTimelineIndex = (currentTimelineIndex + 1) % timelineEvents.length;
+        showTimelineEvent(currentTimelineIndex);
+    });
+</script>
 
 </body>
 </html>
