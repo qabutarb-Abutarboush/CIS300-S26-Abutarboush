@@ -214,8 +214,35 @@ section h2 {
 
 /* Skills */
 #skills {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.skill-category-card {
+  background-color: #0b1118;
+  border: 1px solid #273547;
+  padding: 28px;
+  min-height: 260px;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-category-card:hover {
+  border-color: #38bdf8;
+  background-color: #0e1722;
+  transform: translateY(-4px);
+}
+
+.skill-category-card h3 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 18px;
+  letter-spacing: -0.4px;
 }
 
 .skills-list {
@@ -225,7 +252,7 @@ section h2 {
 }
 
 .skills-list span {
-  background-color: #0b1118;
+  background-color: #101820;
   color: #d8e1ea;
   border: 1px solid #273547;
   border-radius: 0;
@@ -293,7 +320,11 @@ section h2 {
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
+
+  /* gives hover space so the top blue highlight does not get cut off */
+  padding-top: 8px;
   padding-bottom: 22px;
+
   scrollbar-width: thin;
   scrollbar-color: #38bdf8 #0b1118;
 }
@@ -323,10 +354,10 @@ section h2 {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: #38bdf8;
   background-color: #0e1722;
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.12);
 }
 
 .project-card img {
@@ -629,6 +660,83 @@ footer {
   color: #38bdf8;
 }
 
+/* COGO Case Study Comparison */
+.cogo-comparison-section {
+  padding: 60px 40px;
+  border-bottom: 1px solid #1d2733;
+}
+
+.cogo-comparison-header {
+  max-width: 900px;
+  margin-bottom: 30px;
+}
+
+.cogo-comparison-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+}
+
+.cogo-comparison-header p {
+  color: #aab6c4;
+  font-size: 17px;
+  max-width: 850px;
+}
+
+.cogo-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.cogo-image-card {
+  background-color: #0b1118;
+  border: 1px solid #273547;
+  padding: 18px;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cogo-image-card:hover {
+  border-color: #38bdf8;
+  background-color: #0e1722;
+  transform: translateY(-4px);
+}
+
+.cogo-image-card img {
+  width: 100%;
+  height: 460px;
+  object-fit: contain;
+  background-color: #05070a;
+  border: 1px solid #1d2733;
+  display: block;
+}
+
+.cogo-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #38bdf8;
+  min-width: 90px;
+}
+
+.cogo-arrow span {
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.cogo-arrow p {
+  margin-top: 8px;
+  color: #aab6c4;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   header {
@@ -677,7 +785,8 @@ footer {
   .about-content,
   .education-grid,
   .contact-content,
-  .project-details {
+  .project-details,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
@@ -687,6 +796,10 @@ footer {
 
   section {
     padding: 45px 25px;
+  }
+
+  .skill-category-card {
+    min-height: auto;
   }
 
   .project-card img {
@@ -719,6 +832,22 @@ footer {
 
   .project-details {
     padding: 30px 25px 45px;
+  }
+
+  .cogo-comparison-section {
+    padding: 45px 25px;
+  }
+
+  .cogo-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cogo-arrow span {
+    transform: rotate(90deg);
+  }
+
+  .cogo-image-card img {
+    height: 320px;
   }
 
   footer {
